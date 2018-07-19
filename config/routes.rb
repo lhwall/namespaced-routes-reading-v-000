@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:index, :show, :new, :create, :edit, :update]
 
-scope "/admin" do
-  resources: stats, only: [:index]
-root 'posts#index'
+  root 'posts#index'
+
+  scope "/admin" do
+    resources: stats, only: [:index]
+
 end
